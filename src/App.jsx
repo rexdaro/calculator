@@ -5,26 +5,46 @@ import './App.css'
 
 function App() {
   
-  const [resultado, setResultado] = useState(0)
+  const [entrada, setResultado] = useState('')
 
-  const sumar = () => {
-    setResultado()
+  const escribe1 = () => {
+    setResultado(entrada +'1')
+  }
+
+  const escribe2 = () => {
+    setResultado(entrada +'2')
+  }
+
+  const escribe3 = () => {
+    setResultado(entrada +'3')
+  }
+
+
+
+
+
+
+
+
+  
+  const reseteo = () => {
+    setResultado('')
+  }
+
+  const borrar = () => {
+    setResultado(entrada.slice(0, -1))
   }
 
   return (
     <>
-      
-      
-
-
       <h1>esto será una calculadora:</h1>
 
 
       <div className='numeros'>
         <button>0</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
+        <button onClick={escribe1}>1</button>
+        <button onClick={escribe2}>2</button>
+        <button onClick={escribe3}>3</button>
         <button>4</button>
         <button>5</button>
         <button>6</button>
@@ -43,13 +63,22 @@ function App() {
         <button>√</button>
         <button>^</button>
         <button>=</button>
+        <button onClick={borrar}>borrar</button>
+        <button onClick={reseteo}>reset</button>
+
       </div>
 
 
 
       <div className='visualizacion'>
-        <h2>{resultado}</h2>
+        <h2>{entrada}</h2>
       </div>
+
+      <div>
+        <h4>resultado:</h4>
+        <span>0</span>
+      </div>
+      
       
     </>
     
