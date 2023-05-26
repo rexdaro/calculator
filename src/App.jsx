@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import { evaluate } from "mathjs";
+import imgReact from './assets/icons/react.svg'
 
 
 function App() {
@@ -54,82 +55,95 @@ function App() {
   };
 
   return (
-    <div className="calculadora">
-      <h1>Calculadora</h1>
+    <>
 
-
-      <input 
-
-        type="text"      
-        value={entrada}
-        onChange={(e) => setEntrada(e.target.value)}
-        onKeyDown={handleKeyPress}
-        ref={inputRef}
+      <img className='img_react' src={imgReact} alt="React" />
       
-      ></input>
 
-      <h1>entrada:{entrada}</h1>    
-      
-         
-
-      <div className="botones">
+      <h1 className='titulo'>Calculadora</h1>
 
 
-
-        <div className='linea_0_numeros'>
-          <button onClick={() => escribirNumero('(')}>(</button>
-          <button onClick={() => escribirNumero(')')}>)</button>
+      <div className="calculadora">
         
 
 
-          <button onClick={() => escribirNumero('*')}>X</button>   
-          <button onClick={() => escribirNumero('/')}>/</button>
-          <button onClick={() => escribirNumero('^')}>^</button>
-          <button onClick={() => escribirNumero(`sqrt(`)}>√</button>    
+        <input className='input'
+
+          type="text"      
+          value={entrada}
+          onChange={(e) => setEntrada(e.target.value)}
+          onKeyDown={handleKeyPress}
+          ref={inputRef}
         
-       
-     
+        ></input>
 
-          <div className="operadores">
-            <button onClick={() => escribirNumero('+')} >+</button>
-            <button onClick={() => escribirNumero('-')} >-</button>
-          </div>
-        </div>
+        <h1 className='entrada'>entrada:{entrada}</h1>    
 
-
-        <div className='linea_1_numeros'>
-          <button onClick={() => escribirNumero('7')}>7</button>
-          <button onClick={() => escribirNumero('8')}>8</button>
-          <button onClick={() => escribirNumero('9')}>9</button>
-        </div>
-
-        <div className='linea_2_numeros'>
-          <button onClick={() => escribirNumero('4')}>4</button>
-          <button onClick={() => escribirNumero('5')}>5</button>
-          <button onClick={() => escribirNumero('6')}>6</button>
-        </div>
-
-        <div className='linea_3_numeros'>
-          <button onClick={() => escribirNumero('1')}>1</button>
-          <button onClick={() => escribirNumero('2')}>2</button>
-          <button onClick={() => escribirNumero('3')}>3</button>
-        </div>
-
-        <div className='linea_4_numeros'>
-          <button onClick={() => escribirNumero('0')}>0</button>         
-          <button onClick={() => escribirNumero('.')}>.</button>
-          <button onClick={igual}>=</button>
-        </div>  
 
         <div className="resultado">        
-          <span>resultado:{resultado}</span>
-        </div>
+            <p>{resultado}</p>
+          </div>
+          
 
-        <button className="reset" onClick={resetear}>
-          Reset
-        </button>
+        <div className="botones">
+
+
+
+          <div className='linea_0_numeros'>
+            <button onClick={() => escribirNumero('(')}>(</button>
+            <button onClick={() => escribirNumero(')')}>)</button>
+          
+
+
+            
+            <button onClick={() => escribirNumero('^')}>^</button>
+            <button onClick={() => escribirNumero(`sqrt(`)}>√</button>    
+          
+        
+      
+
+            <div className="operadores">
+              <button onClick={() => escribirNumero('+')} >+</button>
+              <button onClick={() => escribirNumero('-')} >-</button>
+              <button onClick={() => escribirNumero('*')}>X</button>   
+              <button onClick={() => escribirNumero('/')}>/</button>
+            </div>
+          </div>
+
+
+          <div className='linea_1_numeros'>
+            <button onClick={() => escribirNumero('7')}>7</button>
+            <button onClick={() => escribirNumero('8')}>8</button>
+            <button onClick={() => escribirNumero('9')}>9</button>
+          </div>
+
+          <div className='linea_2_numeros'>
+            <button onClick={() => escribirNumero('4')}>4</button>
+            <button onClick={() => escribirNumero('5')}>5</button>
+            <button onClick={() => escribirNumero('6')}>6</button>
+          </div>
+
+          <div className='linea_3_numeros'>
+            <button onClick={() => escribirNumero('1')}>1</button>
+            <button onClick={() => escribirNumero('2')}>2</button>
+            <button onClick={() => escribirNumero('3')}>3</button>
+          </div>
+
+          <div className='linea_4_numeros'>
+            <button onClick={() => escribirNumero('0')}>0</button>         
+            <button onClick={() => escribirNumero('.')}>.</button>
+            <button onClick={igual}>=</button>
+          </div>  
+
+          
+
+          <button className="reset" onClick={resetear}>
+            Reset
+          </button>
+        </div>
       </div>
-    </div>
+    </>
+
   );
 }
 
