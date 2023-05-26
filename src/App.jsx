@@ -74,6 +74,8 @@ function App() {
           onChange={(e) => setEntrada(e.target.value)}
           onKeyDown={handleKeyPress}
           ref={inputRef}
+          readOnly={window.innerWidth < 600} // Configura readOnly en dispositivos móviles
+
         
         ></input>
 
