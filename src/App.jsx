@@ -132,14 +132,14 @@ function App() {
           </div>
 
           <div className='linea_4_numeros'>
-            <button onClick={() => escribirNumero('0')}>0</button>         
             <button onClick={() => escribirNumero('.')}>.</button>
-            <button onClick={igual}>=</button>
+            <button onClick={() => escribirNumero('0')}>0</button>         
+            <button className='buttonRed' onClick={igual}>=</button>
           </div>  
 
           
 
-          <button className="reset" onClick={resetear}>
+          <button className='buttonRed' onClick={resetear}>
             Reset
           </button>
         </div>

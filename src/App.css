@@ -111,6 +111,7 @@
 
 button{
   margin: 2px;
+  font-size: 1.2rem;
 }
 
 button:hover{
@@ -125,3 +126,8 @@ button:hover{
 .titulo:hover{
   opacity: calc(100%);
 }
+
+.linea_0_numeros button, .buttonRed{
+  background-color: rgba(255, 0, 0, 0.247);
+}
+
