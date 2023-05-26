@@ -142,6 +142,8 @@ function App() {
           </button>
         </div>
       </div>
+
+      <h5>Copyright © | ♥ Coded with  by Manuel Rivas | Front-End Developer</h5>
     </>
 
   );
