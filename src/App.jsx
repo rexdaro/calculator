@@ -145,7 +145,7 @@ function App() {
         </div>
       </div>
 
-      <h5>Copyright © | ♥ Coded with  by Manuel Rivas | Front-End Developer</h5>
+      <h5>Copyright © | ♥ Coded with  by Manuel Rivas | Front-End Developer.</h5>
     </>
 
   );
