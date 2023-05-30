@@ -33,7 +33,7 @@ function App() {
     
   };
 
-  const resetear = () => {
+  const resetear = () => {a
     setResultado('');   
     setEntrada('');
     inputRef.current.focus();
@@ -77,6 +77,10 @@ function App() {
     setHistorial([]);
   }
 
+  const colocarEnEntrada = (x) => {
+    const expression = x.split('=')[0].trim();
+    setEntrada(expression);
+  };
 
 
   return (
@@ -176,7 +180,7 @@ function App() {
         <h3>Historial de operaciones realizadas:</h3>
         <ul>
         {historial.map((x, index) => (
-          <li key={index}>{x}</li>
+          <li key={index}><button onClick={() => colocarEnEntrada(x)}>{x}</button></li>
         ))
         }
           <button onClick={limpiarHistorial}>Limpiar historial</button>
