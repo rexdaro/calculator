@@ -7,7 +7,12 @@ import imgReact from './assets/icons/react.svg'
 function App() {
   const [resultado, setResultado] = useState('');
   const [entrada, setEntrada] = useState('');
+  const [historial, setHistorial] = useState([]);
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    console.log(historial);
+  }, [historial]);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -29,12 +34,14 @@ function App() {
     
   };
 
-  const igual = () => {    
+  const igual = () => {      
     setResultado(evaluate(entrada))
-    setEntrada('')
+
+    agregarAlHistorial();   
+
+    setEntrada('');
     inputRef.current.focus();
-    limpiarInput('')
-    
+    limpiarInput('');    
    
   }
 
@@ -53,6 +60,14 @@ function App() {
       inputElement.value = '';
     }
   };
+
+
+  const agregarAlHistorial = () => {
+    setHistorial((prevHistorial) => [...prevHistorial, `${entrada} = ${evaluate(entrada)}`]);
+  };
+
+
+
 
   return (
     <>
@@ -146,6 +161,17 @@ function App() {
       </div>
 
       <h5>Copyright © | ♥ Coded with  by Manuel Rivas | Front-End Developer.</h5>
+
+      <div>
+        <h3>Historial de operaciones realizadas:</h3>
+        <ul>
+        {historial.map((x, index) => (
+          <li key={index}>{x}</li>
+        ))
+        }
+          
+        </ul>
+      </div>
     </>
 
   );
