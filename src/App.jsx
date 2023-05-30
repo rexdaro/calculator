@@ -66,6 +66,9 @@ function App() {
     setHistorial((prevHistorial) => [...prevHistorial, `${entrada} = ${evaluate(entrada)}`]);
   };
 
+  const limpiarHistorial = () => {
+    setHistorial([]);
+  }
 
 
 
@@ -169,7 +172,7 @@ function App() {
           <li key={index}>{x}</li>
         ))
         }
-          
+          <button onClick={limpiarHistorial}>Limpiar historial</button>
         </ul>
       </div>
     </>
