@@ -11,7 +11,14 @@ function App() {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    console.log(historial);
+    const storedHistorial = localStorage.getItem('historial');
+    if (storedHistorial) {
+      setHistorial(JSON.parse(storedHistorial));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('historial', JSON.stringify(historial));
   }, [historial]);
 
   useEffect(() => {
