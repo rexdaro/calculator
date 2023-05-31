@@ -70,7 +70,12 @@ function App() {
 
 
   const agregarAlHistorial = () => {
-    setHistorial((prevHistorial) => [...prevHistorial, `${entrada} = ${evaluate(entrada)}`]);
+    if (evaluate(entrada) === undefined) {
+      return
+    }
+    else {
+      setHistorial((prevHistorial) => [...prevHistorial, `${entrada} = ${evaluate(entrada)}`]);
+    }
   };
 
   const limpiarHistorial = () => {
