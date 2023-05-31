@@ -188,14 +188,14 @@ function App() {
 
       <h5>Copyright © | ♥ Coded with  by Manuel Rivas | Front-End Developer.</h5>
 
-      <div id='historial'>
+      <div>
         <h3>Historial de operaciones realizadas:</h3>
         <ul>
         {historial.map((x, index) => (
           <li key={index}><button onClick={() => colocarEnEntrada(x)}>{x}</button></li>
         ))
         }
-          <button onClick={limpiarHistorial}>Limpiar historial</button>
+          <button id='historial'  className='button_historial' onClick={limpiarHistorial}>Limpiar historial</button>
         </ul>
       </div>
     </>
