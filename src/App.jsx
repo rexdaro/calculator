@@ -33,7 +33,7 @@ function App() {
     
   };
 
-  const resetear = () => {a
+  const resetear = () => {
     setResultado('');   
     setEntrada('');
     inputRef.current.focus();
@@ -82,6 +82,9 @@ function App() {
     setEntrada(expression);
   };
 
+  const borrar = () => {
+    setEntrada(entrada.slice(0, entrada.length - 1));
+  }
 
   return (
     <>
@@ -91,6 +94,7 @@ function App() {
 
       <h1 className='titulo'>Calculadora</h1>
 
+      <a href='#historial'><button className='button_historial'>Historial</ button></a>
 
       <div className="calculadora">
         
@@ -171,12 +175,15 @@ function App() {
           <button className='buttonRed' onClick={resetear}>
             Reset
           </button>
+          <button className='buttonRed' onClick={borrar}>
+            {'<---'}
+          </button>
         </div>
       </div>
 
       <h5>Copyright © | ♥ Coded with  by Manuel Rivas | Front-End Developer.</h5>
 
-      <div>
+      <div id='historial'>
         <h3>Historial de operaciones realizadas:</h3>
         <ul>
         {historial.map((x, index) => (

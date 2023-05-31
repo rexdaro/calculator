@@ -98,7 +98,7 @@
   
   font-size: 2rem;
   margin: 0;  
-  
+  padding: 1rem;
 }
 
 .resultado{
@@ -107,6 +107,7 @@
   height: 30%;
   border-radius: 10px;
   margin: 10px;
+  overflow: auto;
 }
 
 button{
@@ -123,6 +124,7 @@ button:hover{
 .titulo{
   opacity: calc(70%);
   transition: 0.3s;
+  margin: 1rem;
 }
 
 .titulo:hover{
@@ -133,3 +135,8 @@ button:hover{
   background-color: rgba(255, 0, 0, 0.247);
 }
 
+.button_historial{
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  background-color: #303fc45d;
+}
